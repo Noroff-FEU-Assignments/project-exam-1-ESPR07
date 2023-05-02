@@ -9,12 +9,14 @@ html {
   font-family: var(--mainFont);
   background-color: var(--htmlBackground);
   scroll-behavior: smooth;
+  height: 100%;
 }
 
 body {
   margin: 0;
   padding: 0;
   color: var(--textColor);
+  height: 100%;
 }
 
 a:link,
@@ -97,8 +99,9 @@ h3 {
   align-items: center;
   background-color: var(--navContainerColor);
   width: 100%;
+  min-height: 3.6vh;
   padding-block: 20px;
-  position: absolute;
+  position: static;
   bottom: 0;
 }
 
