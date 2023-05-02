@@ -4,6 +4,7 @@ const leftArrowIcon = document.querySelector(".leftArrowIcon");
 const rightArrowButton = document.querySelector(".carouselRightButton");
 const rightArrowIcon = document.querySelector(".rightArrowIcon");
 leftArrowButton.disabled = true;
+leftArrowButton.style.cursor = "default";
 let pageCount = 1;
 
 const baseURL = "https://sindrederaas.no/";
@@ -26,7 +27,8 @@ function renderHTML(result) {
 
     const cardContainer = document.createElement("a");
     cardContainer.classList.add("carouselContent");
-    cardContainer.href = carouselContainer.append(cardContainer);
+    cardContainer.href = "/blog.html?id=" + id;
+    carouselContainer.append(cardContainer);
 
     const cardImage = document.createElement("img");
     cardImage.src = featuredImage;
@@ -43,10 +45,12 @@ async function nextPostsPage() {
   pageCount++;
   if (pageCount > 1) {
     leftArrowButton.disabled = false;
+    leftArrowButton.style.cursor = "pointer";
     leftArrowIcon.style.backgroundImage = "url(/images/featuredArrow.svg)";
   }
   if (pageCount === 3) {
     rightArrowButton.disabled = true;
+    rightArrowButton.style.cursor = "default";
     rightArrowIcon.style.backgroundImage = "none";
   }
   carouselContainer.innerHTML = "";
@@ -59,10 +63,12 @@ async function prevPostsPage() {
   pageCount--;
   if (pageCount < 3) {
     rightArrowButton.disabled = false;
+    rightArrowButton.style.cursor = "pointer";
     rightArrowIcon.style.backgroundImage = "url(/images/featuredArrow.svg)";
   }
   if (pageCount === 1) {
     leftArrowButton.disabled = true;
+    leftArrowButton.style.cursor = "default";
     leftArrowIcon.style.backgroundImage = "none";
   }
   carouselContainer.innerHTML = "";
