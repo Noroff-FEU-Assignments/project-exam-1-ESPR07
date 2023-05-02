@@ -8,7 +8,6 @@
 html {
   font-family: var(--mainFont);
   background-color: var(--htmlBackground);
-  height: 100%;
   scroll-behavior: smooth;
 }
 
@@ -99,7 +98,7 @@ h3 {
   background-color: var(--navContainerColor);
   width: 100%;
   padding-block: 20px;
-  position: static;
+  position: absolute;
   bottom: 0;
 }
 
