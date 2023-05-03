@@ -39,10 +39,11 @@ function renderHTML(result) {
 
 loadMoreButton.addEventListener("click", renderNextPage);
 
-function renderNextPage() {
+async function renderNextPage() {
   pageCount++;
+  const APIFetch = await getPosts();
   loadMoreButton.style.display = "none";
-  createPage();
+  renderHTML(APIFetch);
 }
 
 async function createPage() {

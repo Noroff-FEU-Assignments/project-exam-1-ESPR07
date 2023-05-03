@@ -43,6 +43,7 @@ function renderHTML(result) {
 
 async function nextPostsPage() {
   pageCount++;
+  const APIFetch = await getPosts();
   if (pageCount > 1) {
     leftArrowButton.disabled = false;
     leftArrowButton.style.cursor = "pointer";
@@ -54,13 +55,14 @@ async function nextPostsPage() {
     rightArrowIcon.style.backgroundImage = "none";
   }
   carouselContainer.innerHTML = "";
-  createPage();
+  renderHTML(APIFetch);
 }
 
 rightArrowButton.addEventListener("click", nextPostsPage);
 
 async function prevPostsPage() {
   pageCount--;
+  const APIFetch = await getPosts();
   if (pageCount < 3) {
     rightArrowButton.disabled = false;
     rightArrowButton.style.cursor = "pointer";
@@ -72,7 +74,7 @@ async function prevPostsPage() {
     leftArrowIcon.style.backgroundImage = "none";
   }
   carouselContainer.innerHTML = "";
-  createPage();
+  renderHTML(APIFetch);
 }
 
 leftArrowButton.addEventListener("click", prevPostsPage);
