@@ -34,6 +34,7 @@
           name="name"
           placeholder="e.g John Smith (min 5 characters)"
         />
+        <p class="error" id="errorName">Please enter your full name</p>
         <lable for="email">Email:</lable>
         <input
           type="text"
@@ -41,6 +42,7 @@
           name="email"
           placeholder="e.g mail@mail.com"
         />
+        <p class="error" id="errorEmail">Please enter a valid email</p>
         <label for="subject">Subject:</label>
         <input
           type="text"
@@ -48,6 +50,9 @@
           name="subject"
           placeholder="Enter a subject (min 15 characters)"
         />
+        <p class="error" id="errorSubject">
+          Subject must be at least 15 characters
+        </p>
         <label for="message">Message:</label>
         <textarea
           id="message"
@@ -56,6 +61,9 @@
           cols="50"
           placeholder="Enter your message (min 25 characters)"
         ></textarea>
+        <p class="error" id="errorMessage">
+          Message must be at least 25 characters
+        </p>
         <button class="submitButton" title="Submit your form">Submit</button>
       </form>
     </section>

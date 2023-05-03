@@ -208,7 +208,7 @@ h3 {
   flex-direction: column;
   background-color: var(--carouselContentBackground);
   min-height: 200px;
-  width: 250px;
+  min-width: 170px;
   margin-inline: 10px;
 }
 
@@ -365,4 +365,11 @@ h3 {
   flex-direction: column;
   margin: 30px;
   gap: 10px;
+}
+
+.error {
+  display: none;
+  font-size: 0.8rem;
+  color: red;
+  margin: 0;
 }
