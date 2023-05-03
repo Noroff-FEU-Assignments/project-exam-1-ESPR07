@@ -31,7 +31,7 @@ function renderHTML(result) {
     cardImage.alt = featuredAlt;
     cardContainer.append(cardImage);
 
-    const cardTitle = document.createElement("h3");
+    const cardTitle = document.createElement("h2");
     cardTitle.innerText = title.rendered;
     cardContainer.append(cardTitle);
   });

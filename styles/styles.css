@@ -28,14 +28,11 @@ a:visited {
 }
 
 h1,
-h2 {
+h2,
+h3 {
   color: var(--textColor);
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
-}
-
-h3 {
-  color: black;
 }
 
 :root {
@@ -296,21 +293,18 @@ h3 {
 }
 
 /*Browse Page*/
-.browseMainSection {
-  margin-inline: 10%;
-  margin-top: 100px;
-}
-
-.browseContainer {
+.contentBox {
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: var(--containerBackground);
   min-height: 200px;
   margin-bottom: 20px;
+  margin-inline: 10%;
+  margin-top: 100px;
 }
 
-.browseContainer button {
+.contentBox button {
   width: 100px;
   height: 50px;
   margin-block: 20px;
@@ -320,7 +314,7 @@ h3 {
   cursor: pointer;
 }
 
-.browseHeaderContainer {
+.contentHeaderBox {
   display: flex;
   align-items: center;
   background-color: var(--containerHeaderBackground);
@@ -328,7 +322,7 @@ h3 {
   width: 100%;
 }
 
-.browseHeaderContainer h1 {
+.contentHeaderBox h1 {
   margin-left: 20px;
 }
 
@@ -359,6 +353,14 @@ h3 {
   border-bottom: 2px solid black;
 }
 
-.contentCard h3 {
+.contentCard h2 {
   margin-left: 10px;
+}
+
+/*Blog Specific Page*/
+
+/*Contact Page*/
+.contactForm {
+  display: flex;
+  flex-direction: column;
 }
