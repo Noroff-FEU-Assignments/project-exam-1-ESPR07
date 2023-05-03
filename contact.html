@@ -28,13 +28,35 @@
       </div>
       <form class="contactForm">
         <label for="name">Name:</label>
-        <input type="text" id="name" name="name" />
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="e.g John Smith (min 5 characters)"
+        />
         <lable for="email">Email:</lable>
-        <input type="text" id="email" name="email" />
+        <input
+          type="text"
+          id="email"
+          name="email"
+          placeholder="e.g mail@mail.com"
+        />
         <label for="subject">Subject:</label>
-        <input type="text" id="subject" name="subject" />
+        <input
+          type="text"
+          id="subject"
+          name="subject"
+          placeholder="Enter a subject (min 15 characters)"
+        />
         <label for="message">Message:</label>
-        <textarea></textarea>
+        <textarea
+          id="message"
+          name="message"
+          rows="6"
+          cols="50"
+          placeholder="Enter your message (min 25 characters)"
+        ></textarea>
+        <button class="submitButton" title="Submit your form">Submit</button>
       </form>
     </section>
     <footer class="footer">

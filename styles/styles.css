@@ -15,6 +15,7 @@ body {
   margin: 0;
   padding: 0;
   color: var(--textColor);
+  padding-block: 70px;
 }
 
 a:link,
@@ -96,7 +97,7 @@ h3 {
   background-color: var(--navContainerColor);
   width: 100%;
   padding-block: 20px;
-  position: static;
+  position: fixed;
   bottom: 0;
 }
 
@@ -299,9 +300,8 @@ h3 {
   align-items: center;
   background-color: var(--containerBackground);
   min-height: 200px;
-  margin-bottom: 20px;
+  margin-block: 20px;
   margin-inline: 10%;
-  margin-top: 100px;
 }
 
 .contentBox button {
@@ -363,4 +363,6 @@ h3 {
 .contactForm {
   display: flex;
   flex-direction: column;
+  margin: 30px;
+  gap: 10px;
 }
