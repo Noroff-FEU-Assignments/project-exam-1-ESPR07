@@ -75,6 +75,7 @@ h3 {
   margin-right: 20px;
   gap: 20px;
   font-size: 1.2rem;
+  list-style: none;
 }
 
 .navList a {
@@ -263,6 +264,7 @@ h3 {
   margin: 0;
   padding: 0;
   gap: 20px;
+  list-style: none;
 }
 
 #facebook,
