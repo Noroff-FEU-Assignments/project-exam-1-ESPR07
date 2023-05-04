@@ -197,6 +197,11 @@ textarea {
   cursor: pointer;
 }
 
+.carouselRightButton,
+.carouselLeftButton {
+  padding: 0;
+}
+
 .leftArrowIcon {
   height: 100%;
   width: 100%;
