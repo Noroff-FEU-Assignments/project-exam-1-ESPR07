@@ -373,3 +373,14 @@ h3 {
   color: red;
   margin: 0;
 }
+
+.successModal {
+  background-color: var(--containerHeaderBackground);
+}
+.successModal::backdrop {
+  background-color: rgba(31, 31, 31, 0.8);
+}
+
+.successModal p {
+  color: var(--textColor);
+}
