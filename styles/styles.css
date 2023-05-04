@@ -36,6 +36,15 @@ h3 {
     1px 1px 0 #000;
 }
 
+input,
+textarea {
+  font-family: var(--contentFont);
+  background-color: var(--contentBackground);
+  color: var(--textColor);
+  border: 2px solid black;
+  padding: 5px;
+}
+
 /* :root {
   --mainFont: "brunoAce", Verdana, Tahoma, sans-serif;
   --contentFont: arial, verdana, tahoma, sans-serif;
@@ -43,7 +52,7 @@ h3 {
   --htmlBackground: rgba(104, 104, 104, 1);
   --containerHeaderBackground: rgb(84, 84, 84);
   --containerBackground: rgba(31, 31, 31, 1);
-  --carouselContentBackground: rgb(139, 139, 139);
+  --contentBackground: rgb(139, 139, 139);
 } */
 
 :root {
@@ -51,9 +60,9 @@ h3 {
   --contentFont: arial, verdana, tahoma, sans-serif;
   --textColor: white;
   --htmlBackground: rgba(31, 31, 31, 1);
-  --containerHeaderBackground: rgb(84, 84, 84);
+  --containerHeaderBackground: rgb(56, 56, 56);
   --containerBackground: rgba(104, 104, 104, 1);
-  --carouselContentBackground: rgb(59, 59, 59);
+  --contentBackground: rgb(59, 59, 59);
 }
 
 /*Navigation Bar*/
@@ -158,7 +167,7 @@ h3 {
 }
 
 .carouselTitleContainer {
-  background-color: var(--containerHeaderBackground);
+  background-color: var(--contentBackground);
   display: flex;
   align-items: center;
   height: 5vh;
@@ -216,7 +225,7 @@ h3 {
 .carouselContent {
   display: flex;
   flex-direction: column;
-  background-color: var(--carouselContentBackground);
+  background-color: var(--contentBackground);
   min-height: 200px;
   min-width: 170px;
   margin-inline: 10px;
@@ -254,7 +263,7 @@ h3 {
 .socialsTitleContainer {
   display: flex;
   align-items: center;
-  background-color: var(--containerHeaderBackground);
+  background-color: var(--contentBackground);
   height: 5vh;
   width: 100%;
 }
@@ -327,7 +336,7 @@ h3 {
 .contentHeaderBox {
   display: flex;
   align-items: center;
-  background-color: var(--containerHeaderBackground);
+  background-color: var(--contentBackground);
   min-height: 70px;
   width: 100%;
 }
@@ -347,7 +356,7 @@ h3 {
 .contentCard {
   display: flex;
   flex-direction: column;
-  background-color: var(--carouselContentBackground);
+  background-color: var(--contentBackground);
   width: 250px;
   min-height: 100px;
   margin-inline: 10px;
@@ -385,7 +394,7 @@ h3 {
 }
 
 .successModal {
-  background-color: var(--containerHeaderBackground);
+  background-color: var(--contentBackground);
 }
 .successModal::backdrop {
   background-color: rgba(31, 31, 31, 0.8);
@@ -393,4 +402,16 @@ h3 {
 
 .successModal p {
   color: var(--textColor);
+}
+
+.contactForm button {
+  background-color: var(--contentBackground);
+  color: var(--textColor);
+  font-size: 1.2rem;
+  transition: background-color 0.5s;
+}
+
+.contactForm button:hover {
+  background-color: var(--textColor);
+  color: var(--contentBackground);
 }
