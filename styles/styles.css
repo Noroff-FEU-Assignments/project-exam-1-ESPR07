@@ -110,8 +110,9 @@ textarea {
 /*Footer*/
 .footer {
   display: flex;
-  justify-content: space-evenly;
   align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap-reverse;
   background-color: var(--containerBackground);
   width: 100%;
   padding-block: 20px;
@@ -121,6 +122,7 @@ textarea {
 
 .footer p {
   margin: 0;
+  margin-left: 20px;
 }
 
 /*Home Page*/
