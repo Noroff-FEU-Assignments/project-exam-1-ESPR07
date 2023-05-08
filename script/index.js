@@ -21,9 +21,11 @@ async function getPosts() {
 }
 
 function renderHTML(result) {
-  result.forEach(({ id, title, _embedded }) => {
+  result.forEach(({ id, title, _embedded, excerpt }) => {
     const featuredImage = _embedded["wp:featuredmedia"][0].source_url;
     const featuredAlt = _embedded["wp:featuredmedia"][0].alt_text;
+    const textExcerpt = excerpt.rendered;
+    const excerptFormat = textExcerpt.replace(/(<([^>]+)>)/gi, "");
 
     const cardContainer = document.createElement("a");
     cardContainer.classList.add("carouselContent");
@@ -38,6 +40,11 @@ function renderHTML(result) {
     const cardTitle = document.createElement("h3");
     cardTitle.innerText = title.rendered;
     cardContainer.append(cardTitle);
+
+    const cardExcerpt = document.createElement("p");
+    cardExcerpt.innerText = excerptFormat;
+    cardExcerpt.classList.add("subFont");
+    cardContainer.append(cardExcerpt);
   });
 }
 
@@ -47,12 +54,12 @@ async function nextPostsPage() {
   if (pageCount > 1) {
     leftArrowButton.disabled = false;
     leftArrowButton.style.cursor = "pointer";
-    leftArrowIcon.style.backgroundImage = "url(/images/featuredArrow.svg)";
+    leftArrowButton.style.backgroundImage = "url(/images/featuredArrow.svg)";
   }
   if (pageCount === 3) {
     rightArrowButton.disabled = true;
     rightArrowButton.style.cursor = "default";
-    rightArrowIcon.style.backgroundImage = "none";
+    rightArrowButton.style.backgroundImage = "none";
   }
   carouselContainer.innerHTML = "";
   renderHTML(APIFetch);
@@ -66,12 +73,12 @@ async function prevPostsPage() {
   if (pageCount < 3) {
     rightArrowButton.disabled = false;
     rightArrowButton.style.cursor = "pointer";
-    rightArrowIcon.style.backgroundImage = "url(/images/featuredArrow.svg)";
+    rightArrowButton.style.backgroundImage = "url(/images/featuredArrow.svg)";
   }
   if (pageCount === 1) {
     leftArrowButton.disabled = true;
     leftArrowButton.style.cursor = "default";
-    leftArrowIcon.style.backgroundImage = "none";
+    leftArrowButton.style.backgroundImage = "none";
   }
   carouselContainer.innerHTML = "";
   renderHTML(APIFetch);

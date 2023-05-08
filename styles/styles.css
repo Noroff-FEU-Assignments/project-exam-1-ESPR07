@@ -63,6 +63,9 @@ textarea {
   --containerHeaderBackground: rgb(56, 56, 56);
   --containerBackground: rgba(104, 104, 104, 1);
   --contentBackground: rgb(59, 59, 59);
+  --arrowDefault: rgba(31, 31, 31, 0.5);
+  --arrowHover: rgba(31, 31, 31, 1);
+  --boxBorders: 2px solid black;
 }
 
 /*Navigation Bar*/
@@ -76,6 +79,7 @@ textarea {
   padding-block: 20px;
   position: fixed;
   top: 0;
+  border-bottom: var(--boxBorders);
 }
 
 .navLogo {
@@ -118,6 +122,7 @@ textarea {
   padding-block: 20px;
   position: fixed;
   bottom: 0;
+  border-top: var(--boxBorders);
 }
 
 .footer p {
@@ -152,6 +157,7 @@ textarea {
   flex-direction: column;
   flex: 2 1 auto;
   justify-content: space-between;
+  align-items: center;
 }
 
 /*Carousel Browsing and Page Text*/
@@ -166,6 +172,9 @@ textarea {
   display: flex;
   flex-direction: column;
   background-color: var(--containerBackground);
+  max-width: 1200px;
+  min-height: 300px;
+  border: var(--boxBorders);
 }
 
 .carouselTitleContainer {
@@ -178,7 +187,7 @@ textarea {
 
 .carouselHeader {
   margin: 0;
-  padding-left: 5px;
+  padding-left: 20px;
 }
 
 .carouselContentContainer {
@@ -186,40 +195,47 @@ textarea {
   align-items: center;
   justify-content: space-between;
   padding-block: 20px;
-  height: 200px;
   width: 100%;
 }
 
 .carouselContentContainer button {
   display: flex;
-  height: 10vh;
-  width: 10vh;
-  background-color: var(--containerBackground);
+  height: 100px;
+  width: 50px;
   border: none;
   cursor: pointer;
+  border-radius: 0 10px 10px 0;
 }
 
-.carouselRightButton,
 .carouselLeftButton {
-  padding: 0;
-}
-
-.leftArrowIcon {
   height: 100%;
   width: 100%;
   min-width: 50px;
   background-size: contain;
+  background-position: center;
   background-repeat: no-repeat;
+  background-color: var(--arrowDefault);
 }
 
-.rightArrowIcon {
+.carouselLeftButton:hover {
+  background-color: var(--arrowHover);
+}
+
+.carouselRightButton {
   background-image: url(/images/featuredArrow.svg);
   transform: rotate(180deg);
   height: 100%;
   width: 100%;
   min-width: 50px;
   background-size: contain;
+  background-position: center;
   background-repeat: no-repeat;
+  background-color: var(--arrowDefault);
+  transition: background-color 0.3s;
+}
+
+.carouselRightButton:hover {
+  background-color: var(--arrowHover);
 }
 
 .carouselCardContainer {
@@ -233,9 +249,10 @@ textarea {
   display: flex;
   flex-direction: column;
   background-color: var(--contentBackground);
-  min-height: 200px;
+  min-height: 300px;
   min-width: 170px;
   margin-inline: 10px;
+  box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.3);
 }
 
 .carouselContent img {
@@ -246,6 +263,13 @@ textarea {
 
 .carouselContent h3 {
   font-size: 1rem;
+  margin: 5px;
+  border-bottom: 2px solid var(--textColor);
+}
+
+.carouselContent p {
+  font-size: 1rem;
+  word-spacing: 20%;
   margin: 5px;
 }
 
@@ -265,6 +289,7 @@ textarea {
   margin-left: 20px;
   margin-top: 20px;
   height: 15vh;
+  border: var(--boxBorders);
 }
 
 .socialsTitleContainer {
@@ -328,6 +353,7 @@ textarea {
   min-height: 200px;
   margin-block: 20px;
   margin-inline: 10%;
+  border: var(--boxBorders);
 }
 
 .contentBox button {
