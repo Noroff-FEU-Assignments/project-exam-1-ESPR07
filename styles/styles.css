@@ -163,7 +163,6 @@ textarea {
 /*Carousel Browsing and Page Text*/
 .contentContainer {
   display: flex;
-  flex-direction: row;
   width: 100%;
   margin-block: 20px;
 }
@@ -242,7 +241,7 @@ textarea {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   width: 100%;
-  overflow-y: hidden;
+  overflow-y: auto;
 }
 
 .carouselContent {
@@ -265,6 +264,7 @@ textarea {
   font-size: 1rem;
   margin: 5px;
   border-bottom: 2px solid var(--textColor);
+  padding-bottom: 5px;
 }
 
 .carouselContent p {
@@ -322,8 +322,17 @@ textarea {
 #github {
   display: flex;
   background-repeat: no-repeat;
-  height: 50px;
-  width: 50px;
+  height: 70px;
+  width: 70px;
+  border-radius: 10px;
+  background-position: center;
+}
+
+#facebook:hover,
+#twitter:hover,
+#instagram:hover,
+#github:hover {
+  background-color: var(--arrowHover);
 }
 
 #facebook {
@@ -421,8 +430,11 @@ textarea {
 
 .error {
   display: none;
-  font-size: 0.8rem;
-  color: rgb(199, 0, 0, 1);
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--textColor);
+  background-color: red;
+  padding: 5px;
   margin: 0;
 }
 
