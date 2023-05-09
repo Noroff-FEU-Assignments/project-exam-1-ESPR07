@@ -15,7 +15,8 @@ body {
   margin: 0;
   padding: 0;
   color: var(--textColor);
-  padding-block: 70px;
+  padding-top: 70px;
+  padding-bottom: 100px;
 }
 
 a:link,
@@ -43,6 +44,7 @@ textarea {
   color: var(--textColor);
   border: 2px solid black;
   padding: 5px;
+  width: 100%;
 }
 
 /* :root {
@@ -141,6 +143,7 @@ textarea {
   background-size: cover;
   height: 350px;
   padding-top: 73px;
+  border-bottom: var(--boxBorders);
 }
 
 .homeHeader {
@@ -214,6 +217,7 @@ textarea {
   background-position: center;
   background-repeat: no-repeat;
   background-color: var(--arrowDefault);
+  transition: background-color 0.3s;
 }
 
 .carouselLeftButton:hover {
@@ -326,6 +330,7 @@ textarea {
   width: 70px;
   border-radius: 10px;
   background-position: center;
+  transition: background-color 0.3s;
 }
 
 #facebook:hover,
@@ -459,4 +464,50 @@ textarea {
 .contactForm button:hover {
   background-color: var(--textColor);
   color: var(--contentBackground);
+}
+
+/*Blog Page*/
+.articleContainer {
+  display: flex;
+  flex-direction: column;
+  margin-inline: 10%;
+}
+.articleContainer img {
+  object-fit: cover;
+  object-position: center;
+  max-width: 500px;
+  max-height: 400px;
+  margin-right: 10px;
+}
+
+.articleContainer h1 {
+  font-size: 2rem;
+}
+
+.textAlt {
+  font-size: 1rem;
+  margin: 0;
+  color: grey;
+}
+
+.articleText {
+  font-size: 1.5rem;
+  font-family: var(--contentFont);
+  letter-spacing: 1px;
+  margin: 0;
+  margin-top: 10px;
+}
+
+.modalContainer {
+  background-color: transparent;
+  border: none;
+}
+
+.modalContainer p {
+  margin: 0;
+  color: var(--textColor);
+}
+
+.modalContainer::backdrop {
+  background-color: rgba(31, 31, 31, 0.8);
 }

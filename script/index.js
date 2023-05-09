@@ -42,7 +42,10 @@ function renderHTML(result) {
     cardContainer.append(cardTitle);
 
     const cardExcerpt = document.createElement("p");
-    cardExcerpt.innerText = excerptFormat;
+    cardExcerpt.innerText = new DOMParser().parseFromString(
+      excerptFormat,
+      "text/html"
+    ).body.textContent;
     cardExcerpt.classList.add("subFont");
     cardContainer.append(cardExcerpt);
   });
