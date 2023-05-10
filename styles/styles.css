@@ -556,9 +556,9 @@ textarea {
 
 .altText {
   color: var(--textColor);
-  background-color: var(--containerBackground);
   font-size: 1.5rem;
   padding-left: 10px;
+  margin: 0;
 }
 
 .imageModal1 img,
