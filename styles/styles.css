@@ -12,6 +12,9 @@ html {
 }
 
 body {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right;
   margin: 0;
   padding: 0;
   color: var(--textColor);
@@ -510,4 +513,55 @@ textarea {
 
 .modalContainer::backdrop {
   background-color: rgba(31, 31, 31, 0.8);
+}
+
+/*About Us*/
+
+.aboutSection {
+  margin-inline: 10%;
+  margin-top: 20px;
+}
+
+.aboutSection img {
+  max-width: 500px;
+  border-radius: 1000px;
+  margin: 10px;
+}
+
+.leftAlign {
+  float: left;
+}
+
+.rightAlign {
+  float: right;
+}
+
+.aboutText {
+  font-size: 1.5rem;
+  line-height: 40px;
+}
+
+.textStart {
+  font-size: 3rem;
+}
+
+.aboutSection dialog {
+  background-color: transparent;
+  border: none;
+}
+
+.aboutSection dialog::backdrop {
+  background-color: rgba(31, 31, 31, 0.8);
+}
+
+.altText {
+  color: var(--textColor);
+  background-color: var(--containerBackground);
+  font-size: 1.5rem;
+  padding-left: 10px;
+}
+
+.imageModal1 img,
+.imageModal2 img {
+  border-radius: 0;
 }
