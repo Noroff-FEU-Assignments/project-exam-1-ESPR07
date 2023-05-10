@@ -85,6 +85,7 @@ textarea {
   position: fixed;
   top: 0;
   border-bottom: var(--boxBorders);
+  z-index: 10;
 }
 
 .navLogo {
@@ -564,4 +565,92 @@ textarea {
 .imageModal1 img,
 .imageModal2 img {
   border-radius: 0;
+}
+
+/*Media Queries*/
+@media only screen and (max-width: 900px) {
+  body {
+    padding-top: 100px;
+  }
+
+  /*Nav and Footer*/
+  .navigation {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .footer {
+    display: none;
+  }
+
+  .navLogo {
+    margin: 0;
+    margin-bottom: 5px;
+  }
+
+  /*Home Page Mobile */
+
+  .homeHeader {
+    margin-left: 10px;
+  }
+
+  .carouselContentContainer {
+    flex-direction: column;
+  }
+
+  .carouselContentContainer button {
+    border-radius: 0;
+    height: 150px;
+    width: 100px;
+  }
+
+  .carouselLeftButton {
+    transform: rotate(90deg);
+  }
+
+  .carouselRightButton {
+    transform: rotate(270deg);
+  }
+
+  .contentContainer {
+    flex-direction: column;
+  }
+
+  .carouselContainer {
+    width: 100%;
+  }
+
+  .carouselContent {
+    margin-block: 20px;
+  }
+
+  .carouselCardContainer {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .socials {
+    margin: 0;
+  }
+
+  /*Blog Page*/
+  .clickableImage {
+    display: flex;
+    width: 100%;
+  }
+
+  .clickableImage img {
+    width: 100%;
+  }
+
+  /*About Page*/
+  .aboutSection {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .aboutSection img {
+    float: none;
+    border-radius: 0;
+  }
 }
