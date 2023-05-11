@@ -6,7 +6,7 @@ const rightArrowIcon = document.querySelector(".rightArrowIcon");
 
 const baseURL = "https://sindrederaas.no/";
 const URLPath = "wordpress/wp-json/wp/v2/";
-const URLElements = "posts?_embed&per_page=8";
+const URLElements = "posts?_embed&per_page=12";
 const dynamicURLParam = "&page=";
 
 const fullAPIURL = baseURL + URLPath + URLElements;
@@ -49,9 +49,12 @@ function renderHTML(result) {
 }
 
 async function nextPostsPage() {
-  const APIFetch = await getPosts();
+  if (window.matchMedia("(max-width: 900px)").matches) {
+    carouselContainer.scrollTop += 720;
+  } else {
+    carouselContainer.scrollLeft += 760;
+  }
 
-  carouselContainer.scrollLeft += 1000;
   // if (pageCount > 1) {
   //   leftArrowButton.disabled = false;
   //   leftArrowButton.style.cursor = "pointer";
@@ -67,9 +70,11 @@ async function nextPostsPage() {
 rightArrowButton.addEventListener("click", nextPostsPage);
 
 async function prevPostsPage() {
-  const APIFetch = await getPosts();
-
-  carouselContainer.scrollLeft += -1000;
+  if (window.matchMedia("(max-width: 900px)").matches) {
+    carouselContainer.scrollTop += -720;
+  } else {
+    carouselContainer.scrollLeft += -760;
+  }
   // if (pageCount < 3) {
   //   rightArrowButton.disabled = false;
   //   rightArrowButton.style.cursor = "pointer";
