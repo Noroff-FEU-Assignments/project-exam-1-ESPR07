@@ -331,8 +331,8 @@ textarea {
 #github {
   display: flex;
   background-repeat: no-repeat;
-  height: 70px;
-  width: 70px;
+  height: 4rem;
+  width: 4rem;
   border-radius: 10px;
   background-position: center;
   transition: background-color 0.3s;
@@ -597,6 +597,7 @@ textarea {
 
   .carouselContentContainer {
     flex-direction: column;
+    padding: 0;
   }
 
   .carouselContentContainer button {
