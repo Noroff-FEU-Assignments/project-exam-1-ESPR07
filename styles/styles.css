@@ -214,6 +214,7 @@ textarea {
 }
 
 .carouselLeftButton {
+  background-image: url(/images/featuredArrow.svg);
   height: 100%;
   width: 100%;
   min-width: 50px;
@@ -246,10 +247,10 @@ textarea {
 }
 
 .carouselCardContainer {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  width: 100%;
-  overflow-y: auto;
+  display: flex;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  max-width: 760px;
 }
 
 .carouselContent {
@@ -625,8 +626,10 @@ textarea {
   }
 
   .carouselCardContainer {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    overflow-y: hidden;
     gap: 20px;
+    max-height: 730px;
   }
 
   .socials {

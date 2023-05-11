@@ -19,6 +19,7 @@ async function getPost() {
 }
 
 function renderHTML(result) {
+  document.title = result.title.rendered;
   const featuredImage = result._embedded["wp:featuredmedia"][0].source_url;
   const featuredAlt = result._embedded["wp:featuredmedia"][0].alt_text;
   const contentText = result.content.rendered;

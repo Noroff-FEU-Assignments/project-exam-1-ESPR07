@@ -3,19 +3,16 @@ const leftArrowButton = document.querySelector(".carouselLeftButton");
 const leftArrowIcon = document.querySelector(".leftArrowIcon");
 const rightArrowButton = document.querySelector(".carouselRightButton");
 const rightArrowIcon = document.querySelector(".rightArrowIcon");
-leftArrowButton.disabled = true;
-leftArrowButton.style.cursor = "default";
-let pageCount = 1;
 
 const baseURL = "https://sindrederaas.no/";
 const URLPath = "wordpress/wp-json/wp/v2/";
-const URLElements = "posts?_embed&per_page=4";
+const URLElements = "posts?_embed&per_page=8";
 const dynamicURLParam = "&page=";
 
-const fullAPIURL = baseURL + URLPath + URLElements + dynamicURLParam;
+const fullAPIURL = baseURL + URLPath + URLElements;
 
 async function getPosts() {
-  const response = await fetch(fullAPIURL + pageCount);
+  const response = await fetch(fullAPIURL);
   const result = await response.json();
   return result;
 }
@@ -52,39 +49,37 @@ function renderHTML(result) {
 }
 
 async function nextPostsPage() {
-  pageCount++;
   const APIFetch = await getPosts();
-  if (pageCount > 1) {
-    leftArrowButton.disabled = false;
-    leftArrowButton.style.cursor = "pointer";
-    leftArrowButton.style.backgroundImage = "url(/images/featuredArrow.svg)";
-  }
-  if (pageCount === 3) {
-    rightArrowButton.disabled = true;
-    rightArrowButton.style.cursor = "default";
-    rightArrowButton.style.backgroundImage = "none";
-  }
-  carouselContainer.innerHTML = "";
-  renderHTML(APIFetch);
+
+  carouselContainer.scrollLeft += 1000;
+  // if (pageCount > 1) {
+  //   leftArrowButton.disabled = false;
+  //   leftArrowButton.style.cursor = "pointer";
+  //   leftArrowButton.style.backgroundImage = "url(/images/featuredArrow.svg)";
+  // }
+  // if (pageCount === 3) {
+  //   rightArrowButton.disabled = true;
+  //   rightArrowButton.style.cursor = "default";
+  //   rightArrowButton.style.backgroundImage = "none";
+  // }
 }
 
 rightArrowButton.addEventListener("click", nextPostsPage);
 
 async function prevPostsPage() {
-  pageCount--;
   const APIFetch = await getPosts();
-  if (pageCount < 3) {
-    rightArrowButton.disabled = false;
-    rightArrowButton.style.cursor = "pointer";
-    rightArrowButton.style.backgroundImage = "url(/images/featuredArrow.svg)";
-  }
-  if (pageCount === 1) {
-    leftArrowButton.disabled = true;
-    leftArrowButton.style.cursor = "default";
-    leftArrowButton.style.backgroundImage = "none";
-  }
-  carouselContainer.innerHTML = "";
-  renderHTML(APIFetch);
+
+  carouselContainer.scrollLeft += -1000;
+  // if (pageCount < 3) {
+  //   rightArrowButton.disabled = false;
+  //   rightArrowButton.style.cursor = "pointer";
+  //   rightArrowButton.style.backgroundImage = "url(/images/featuredArrow.svg)";
+  // }
+  // if (pageCount === 1) {
+  //   leftArrowButton.disabled = true;
+  //   leftArrowButton.style.cursor = "default";
+  //   leftArrowButton.style.backgroundImage = "none";
+  // }
 }
 
 leftArrowButton.addEventListener("click", prevPostsPage);
