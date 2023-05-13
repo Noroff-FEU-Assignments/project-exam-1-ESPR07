@@ -602,8 +602,8 @@ textarea {
 
   .carouselContentContainer button {
     border-radius: 0;
-    height: 150px;
-    width: 100px;
+    height: 100px;
+    width: 50px;
   }
 
   .carouselLeftButton {
