@@ -179,7 +179,6 @@ textarea {
   flex-direction: column;
   background-color: var(--containerBackground);
   max-width: 1200px;
-  min-width: 800px;
   min-height: 300px;
   border: var(--boxBorders);
 }
@@ -376,7 +375,7 @@ textarea {
   border: var(--boxBorders);
 }
 
-.loadMore {
+.contentBox button {
   width: 100px;
   height: 50px;
   margin-block: 20px;
@@ -389,35 +388,9 @@ textarea {
 .contentHeaderBox {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   background-color: var(--contentBackground);
   min-height: 70px;
   width: 100%;
-}
-
-.searchBar {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-right: 30px;
-}
-
-.searchInput {
-  height: 16px;
-  background-color: var(--containerBackground);
-}
-
-.searchButton {
-  height: 30px;
-  width: 70px;
-  margin: 0;
-  background-color: var(--containerBackground);
-  border: 2px solid black;
-  border-left: none;
-}
-
-.searchButton:hover {
-  cursor: pointer;
 }
 
 .contentHeaderBox h1 {
@@ -441,11 +414,6 @@ textarea {
   margin-inline: 10px;
   margin-block: 20px;
   border: 2px solid black;
-  transition: transform 0.3s;
-}
-
-.contentCard:hover {
-  transform: scale(1.1);
 }
 
 .contentCard img {
