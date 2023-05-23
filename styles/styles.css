@@ -656,6 +656,10 @@ textarea {
     margin-inline: 10px;
   }
 
+  .mainSection {
+    margin-inline: 5%;
+  }
+
   .carouselContentContainer {
     flex-direction: column;
     padding: 0;
@@ -718,6 +722,7 @@ textarea {
   .aboutSection {
     display: flex;
     flex-direction: column;
+    margin-inline: 5%;
   }
 
   .aboutSection img {
@@ -726,5 +731,10 @@ textarea {
     width: 100%;
     margin: 0;
     margin-bottom: 10px;
+  }
+
+  /*Contacts*/
+  .contentBox {
+    margin-inline: 5%;
   }
 }
