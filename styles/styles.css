@@ -652,7 +652,8 @@ textarea {
   /*Home Page Mobile */
 
   .homeHeader {
-    margin-left: 10px;
+    font-size: 2rem;
+    margin-inline: 10px;
   }
 
   .carouselContentContainer {
