@@ -12,14 +12,16 @@ html {
 }
 
 body {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: right;
   margin: 0;
   padding: 0;
+  width: 100%;
+  min-height: 92vh;
   color: var(--textColor);
   padding-top: 70px;
-  padding-bottom: 100px;
+  background-image: url(/images/htmlBackground3.webp);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
 }
 
 a:link,
@@ -35,9 +37,13 @@ a:visited {
 h1,
 h2,
 h3 {
-  color: var(--textColor);
+  color: var(--headerColor);
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
+}
+
+h3 {
+  color: var(--textColor);
 }
 
 input,
@@ -64,18 +70,20 @@ textarea {
   --mainFont: "brunoAce", Verdana, Tahoma, sans-serif;
   --contentFont: arial, verdana, tahoma, sans-serif;
   --textColor: white;
+  --headerColor: rgba(0, 138, 229, 1);
+  --navColor: rgba(31, 31, 31, 1);
   --htmlBackground: rgba(31, 31, 31, 1);
   --containerHeaderBackground: rgb(56, 56, 56);
-  --containerBackground: rgba(104, 104, 104, 1);
+  --containerBackground: rgba(31, 31, 31, 0.7);
   --contentBackground: rgb(59, 59, 59);
-  --arrowDefault: rgba(31, 31, 31, 0.5);
-  --arrowHover: rgba(31, 31, 31, 1);
+  --arrowDefault: rgba(0, 138, 229, 0.5);
+  --arrowHover: rgba(0, 138, 229, 1);
   --boxBorders: 2px solid black;
 }
 
 /*Navigation Bar*/
 .navigation {
-  background-color: var(--containerBackground);
+  background-color: var(--navColor);
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -91,6 +99,10 @@ textarea {
 .navLogo {
   margin-left: 20px;
   font-size: 1.7rem;
+}
+
+.logoColor {
+  color: var(--headerColor);
 }
 
 .navList {
@@ -125,9 +137,8 @@ textarea {
   flex-wrap: wrap-reverse;
   background-color: var(--containerBackground);
   width: 100%;
+  height: 100%;
   padding-block: 20px;
-  position: fixed;
-  bottom: 0;
   border-top: var(--boxBorders);
 }
 
@@ -151,14 +162,16 @@ textarea {
 }
 
 .homeHeader {
+  font-size: 3rem;
   color: var(--textColor);
   margin: 0;
-  margin-bottom: 90px;
+  margin-block: 90px;
+  text-align: center;
 }
 
 /*Main Section Containers*/
 .mainSection {
-  margin-inline: 5%;
+  margin-inline: 10%;
   margin-top: 20px;
   display: flex;
   flex-direction: column;
@@ -178,8 +191,9 @@ textarea {
   display: flex;
   flex-direction: column;
   background-color: var(--containerBackground);
-  max-width: 1200px;
   min-height: 300px;
+  width: 100%;
+  min-width: 900px;
   border: var(--boxBorders);
 }
 
@@ -282,8 +296,19 @@ textarea {
   margin: 5px;
 }
 
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--containerBackground);
+  padding-inline: 10px;
+}
+
 .mainContent h1 {
   font-size: 2rem;
+}
+
+.headerColorInvert {
+  color: var(--textColor);
 }
 
 .mainContent p {
@@ -296,7 +321,6 @@ textarea {
   flex-direction: column;
   background-color: var(--containerBackground);
   margin-left: 20px;
-  margin-top: 20px;
   height: 15vh;
   border: var(--boxBorders);
 }
@@ -402,7 +426,6 @@ textarea {
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
-  /* grid-template-columns: 1fr 1fr 1fr 1fr; */
 }
 
 .contentCard {
@@ -414,6 +437,11 @@ textarea {
   margin-inline: 10px;
   margin-block: 20px;
   border: 2px solid black;
+  transition: transform 0.3s;
+}
+
+.contentCard:hover {
+  transform: scale(1.2);
 }
 
 .contentCard img {
@@ -428,13 +456,18 @@ textarea {
   margin-left: 10px;
 }
 
-/*Blog Specific Page*/
-
 /*Contact Page*/
 .contactForm {
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin: 30px;
+  gap: 10px;
+}
+
+.inputFields {
+  display: flex;
+  flex-direction: column;
   gap: 10px;
 }
 
@@ -446,6 +479,7 @@ textarea {
   background-color: red;
   padding: 5px;
   margin: 0;
+  width: 100%;
 }
 
 .successModal {
@@ -473,9 +507,8 @@ textarea {
 
 /*Blog Page*/
 .articleContainer {
-  display: flex;
-  flex-direction: column;
   margin-inline: 10%;
+  padding-bottom: 50px;
 }
 .articleContainer img {
   object-fit: cover;
@@ -485,8 +518,22 @@ textarea {
   margin-right: 10px;
 }
 
-.articleContainer h1 {
-  font-size: 2rem;
+.blogHeader {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.clickableImage {
+  float: left;
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.clickableImage:hover {
+  cursor: pointer;
 }
 
 .textAlt {
@@ -522,6 +569,7 @@ textarea {
 .aboutSection {
   margin-inline: 10%;
   margin-top: 20px;
+  padding: 10px;
 }
 
 .aboutSection img {
@@ -538,13 +586,21 @@ textarea {
   float: right;
 }
 
+.clearFix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 .aboutText {
   font-size: 1.5rem;
   line-height: 40px;
+  margin: 0;
 }
 
 .textStart {
   font-size: 3rem;
+  color: var(--headerColor);
 }
 
 .aboutSection dialog {
@@ -572,6 +628,10 @@ textarea {
 @media only screen and (max-width: 900px) {
   body {
     padding-top: 100px;
+  }
+
+  html {
+    background-position: center;
   }
 
   /*Nav and Footer*/
@@ -620,6 +680,7 @@ textarea {
 
   .carouselContainer {
     width: 100%;
+    min-width: 300px;
   }
 
   .carouselContent {
@@ -635,16 +696,13 @@ textarea {
 
   .socials {
     margin: 0;
+    margin-top: 20px;
   }
 
   /*Blog Page*/
-  .clickableImage {
-    display: flex;
-    width: 100%;
-  }
 
-  .clickableImage img {
-    width: 100%;
+  .modalContainer img {
+    max-width: 300px;
   }
 
   /*About Page*/

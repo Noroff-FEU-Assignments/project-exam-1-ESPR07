@@ -9,12 +9,10 @@ const ID = param.get("id");
 const baseURL = "https://sindrederaas.no/";
 const URLPath = "wordpress/wp-json/wp/v2/posts/";
 const fullURL = baseURL + URLPath + ID + "?_embed";
-console.log(fullURL);
 
 async function getPost() {
   const response = await fetch(fullURL);
   const result = await response.json();
-  console.log(result);
   return result;
 }
 
@@ -38,6 +36,7 @@ function renderHTML(result) {
   blogHeader.innerText = result.title.rendered;
 
   const blogImage = document.createElement("img");
+  blogImage.classList.add("blogImage");
   blogImage.src = featuredImage;
   blogImage.alt = featuredAlt;
   clickableImage.append(blogImage);
@@ -45,7 +44,7 @@ function renderHTML(result) {
   const blogImageAlt = document.createElement("p");
   blogImageAlt.classList.add("textAlt");
   blogImageAlt.innerText = featuredAlt;
-  articleContainer.append(blogImageAlt);
+  clickableImage.append(blogImageAlt);
 
   const blogText = document.createElement("p");
   blogText.innerText = new DOMParser().parseFromString(

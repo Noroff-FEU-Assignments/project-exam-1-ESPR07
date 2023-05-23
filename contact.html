@@ -24,12 +24,12 @@
   <body>
     <nav class="navigation">
       <a class="navLogo" href="/index.html" title="Go to the home Page"
-        >TechPost</a
+        ><span class="logoColor">Tech</span>Post</a
       >
       <div class="navList">
-        <a href="/browsePage.html" title="Head to the blog list">Blog</a>
-        <a href="/about.html" title="Read more about us">About</a>
-        <a href="/contact.html" title="Ask us questions">Contact</a>
+          <a href="/browsePage.html" title="Head to the blog list">Blog</a>
+          <a href="/about.html" title="Read more about us">About</a>
+          <a href="/contact.html" title="Ask us questions">Contact</a>
     </nav>
     <dialog class="successModal">
       <h1>Thank you for contacting us!</h1>
@@ -40,53 +40,47 @@
         <h1>Contact Us</h1>
       </div>
       <form class="contactForm">
-        <label for="name">Name:</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          placeholder="e.g John Smith (min 5 characters)"
-        />
-        <p class="error" id="errorName">Please enter your full name</p>
-        <label for="email">Email:</label>
-        <input
-          type="text"
-          id="email"
-          name="email"
-          placeholder="e.g mail@mail.com"
-        />
-        <p class="error" id="errorEmail">Please enter a valid email</p>
-        <label for="subject">Subject:</label>
-        <input
-          type="text"
-          id="subject"
-          name="subject"
-          placeholder="Enter a subject (min 15 characters)"
-        />
-        <p class="error" id="errorSubject">
-          Subject must be at least 15 characters
-        </p>
-        <label for="message">Message:</label>
-        <textarea
-          id="message"
-          name="message"
-          rows="6"
-          cols="50"
-          placeholder="Enter your message (min 25 characters)"
-        ></textarea>
-        <p class="error" id="errorMessage">
-          Message must be at least 25 characters
-        </p>
+        <div class="inputFields">
+          <label for="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="e.g John Smith (min 5 characters)"
+          />
+          <p class="error" id="errorName">Please enter your full name</p>
+          <label for="email">Email:</label>
+          <input
+            type="text"
+            id="email"
+            name="email"
+            placeholder="e.g mail@mail.com"
+          />
+          <p class="error" id="errorEmail">Please enter a valid email</p>
+          <label for="subject">Subject:</label>
+          <input
+            type="text"
+            id="subject"
+            name="subject"
+            placeholder="Enter a subject (min 15 characters)"
+          />
+          <p class="error" id="errorSubject">
+            Subject must be at least 15 characters
+          </p>
+          <label for="message">Message:</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="6"
+            cols="50"
+            placeholder="Enter your message (min 25 characters)"
+          ></textarea>
+          <p class="error" id="errorMessage">
+            Message must be at least 25 characters
+          </p>
+        </div>
         <button class="submitButton" title="Submit your form">Submit</button>
       </form>
     </section>
-    <footer class="footer">
-      <p>Copyright <span class="subFont">©</span> 2023 Techpost Blog</p>
-      <div class="navList">
-        <a href="/browsePage.html" title="Head to the blog list">Blog</a>
-        <a href="/about.html" title="Read more about us">About</a>
-        <a href="/contact.html" title="Ask us questions">Contact</a>
-      </div>
-    </footer>
   </body>
 </html>
