@@ -680,19 +680,23 @@ textarea {
   }
 
   .carouselContainer {
-    width: 100%;
     min-width: 300px;
   }
 
   .carouselContent {
-    margin-block: 20px;
+    margin-block: 10px;
+    min-height: 140px;
+  }
+
+  .carouselContent img {
+    display: none;
   }
 
   .carouselCardContainer {
     flex-direction: column;
     overflow-y: hidden;
     gap: 20px;
-    max-height: 730px;
+    max-height: 365px;
   }
 
   .socials {

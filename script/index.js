@@ -50,7 +50,7 @@ function renderHTML(result) {
 
 async function nextPostsPage() {
   if (window.matchMedia("(max-width: 900px)").matches) {
-    carouselContainer.scrollTop += 720;
+    carouselContainer.scrollTop += 355;
   } else {
     carouselContainer.scrollLeft += 760;
   }
@@ -71,7 +71,7 @@ rightArrowButton.addEventListener("click", nextPostsPage);
 
 async function prevPostsPage() {
   if (window.matchMedia("(max-width: 900px)").matches) {
-    carouselContainer.scrollTop += -720;
+    carouselContainer.scrollTop += -355;
   } else {
     carouselContainer.scrollLeft += -760;
   }
