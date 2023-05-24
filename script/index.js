@@ -55,17 +55,6 @@ async function nextPostsPage() {
   } else {
     carouselContainer.scrollLeft += 760;
   }
-
-  // if (pageCount > 1) {
-  //   leftArrowButton.disabled = false;
-  //   leftArrowButton.style.cursor = "pointer";
-  //   leftArrowButton.style.backgroundImage = "url(/images/featuredArrow.svg)";
-  // }
-  // if (pageCount === 3) {
-  //   rightArrowButton.disabled = true;
-  //   rightArrowButton.style.cursor = "default";
-  //   rightArrowButton.style.backgroundImage = "none";
-  // }
 }
 
 rightArrowButton.addEventListener("click", nextPostsPage);
@@ -76,16 +65,6 @@ async function prevPostsPage() {
   } else {
     carouselContainer.scrollLeft += -760;
   }
-  // if (pageCount < 3) {
-  //   rightArrowButton.disabled = false;
-  //   rightArrowButton.style.cursor = "pointer";
-  //   rightArrowButton.style.backgroundImage = "url(/images/featuredArrow.svg)";
-  // }
-  // if (pageCount === 1) {
-  //   leftArrowButton.disabled = true;
-  //   leftArrowButton.style.cursor = "default";
-  //   leftArrowButton.style.backgroundImage = "none";
-  // }
 }
 function removeLoader() {
   loader.forEach((loader) => {
