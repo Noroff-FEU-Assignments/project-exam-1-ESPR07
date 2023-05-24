@@ -303,8 +303,9 @@ textarea {
   padding-inline: 10px;
 }
 
-.mainContent h1 {
+.mainContent h3 {
   font-size: 2rem;
+  color: var(--headerColor);
 }
 
 .headerColorInvert {
