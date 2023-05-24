@@ -3,7 +3,7 @@ const leftArrowButton = document.querySelector(".carouselLeftButton");
 const leftArrowIcon = document.querySelector(".leftArrowIcon");
 const rightArrowButton = document.querySelector(".carouselRightButton");
 const rightArrowIcon = document.querySelector(".rightArrowIcon");
-const loader = document.querySelectorAll(".loader");
+const loader = document.querySelectorAll(".indexLoader");
 
 const baseURL = "https://sindrederaas.no/";
 const URLPath = "wordpress/wp-json/wp/v2/";
