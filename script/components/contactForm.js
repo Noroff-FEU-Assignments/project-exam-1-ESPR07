@@ -10,7 +10,7 @@ const subjectError = document.querySelector("#errorSubject");
 const messageValue = document.querySelector("#message");
 const messageError = document.querySelector("#errorMessage");
 
-const submitButton = document.querySelector(".submitButton");
+const submitButton = document.querySelector(".button");
 const successModal = document.querySelector(".successModal");
 
 submitButton.addEventListener("click", contactValidationEvent);

@@ -1,5 +1,6 @@
 const contentCardContainer = document.querySelector(".browseContentContainer");
-const loadMoreButton = document.querySelector(".loadMore");
+const loadMoreButton = document.querySelector(".button");
+const loader = document.querySelector(".browseLoader");
 
 let pageCount = 1;
 
@@ -48,6 +49,8 @@ async function renderNextPage() {
 
 async function createPage() {
   const fetchAPI = await getPosts();
+
+  loader.style.display = "none";
 
   renderHTML(fetchAPI);
 }

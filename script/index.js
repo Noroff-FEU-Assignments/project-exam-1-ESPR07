@@ -3,6 +3,7 @@ const leftArrowButton = document.querySelector(".carouselLeftButton");
 const leftArrowIcon = document.querySelector(".leftArrowIcon");
 const rightArrowButton = document.querySelector(".carouselRightButton");
 const rightArrowIcon = document.querySelector(".rightArrowIcon");
+const loader = document.querySelectorAll(".loader");
 
 const baseURL = "https://sindrederaas.no/";
 const URLPath = "wordpress/wp-json/wp/v2/";
@@ -86,11 +87,18 @@ async function prevPostsPage() {
   //   leftArrowButton.style.backgroundImage = "none";
   // }
 }
+function removeLoader() {
+  loader.forEach((loader) => {
+    loader.style.display = "none";
+  });
+}
 
 leftArrowButton.addEventListener("click", prevPostsPage);
 
 async function createPage() {
   const APIFetch = await getPosts();
+
+  removeLoader();
 
   renderHTML(APIFetch);
 }
