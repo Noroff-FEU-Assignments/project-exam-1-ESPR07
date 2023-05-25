@@ -1,6 +1,9 @@
 const contentCardContainer = document.querySelector(".browseContentContainer");
 const loadMoreButton = document.querySelector(".button");
 const loader = document.querySelector(".browseLoader");
+const searchForm = document.querySelector(".searchBar");
+const searchField = document.querySelector(".searchField");
+const searchButton = document.querySelector(".searchButton");
 
 let pageCount = 1;
 
@@ -46,6 +49,13 @@ async function renderNextPage() {
   loadMoreButton.style.display = "none";
   renderHTML(APIFetch);
 }
+
+function updateValue(event) {
+  const searchValue = searchField.value;
+  searchForm.action = "/browsePage.html" + "?search=" + searchValue;
+}
+
+searchForm.addEventListener("submit", updateValue);
 
 async function createPage() {
   const fetchAPI = await getPosts();
