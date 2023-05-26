@@ -3,7 +3,7 @@ const loadMoreButton = document.querySelector(".button");
 const loader = document.querySelector(".browseLoader");
 const searchForm = document.querySelector(".searchBar");
 const searchField = document.querySelector(".searchField");
-const searchButton = document.querySelector(".searchButton");
+const searchButton = document.querySelector(".button");
 
 let pageCount = 1;
 
@@ -50,12 +50,23 @@ async function renderNextPage() {
   renderHTML(APIFetch);
 }
 
-function updateValue(event) {
+async function updateHTML(event) {
+  event.preventDefault();
+  const blogFetch = await getPosts();
   const searchValue = searchField.value;
-  searchForm.action = "/browsePage.html" + "?search=" + searchValue;
+  contentCardContainer.innerText = "";
+  if (searchValue != "" && searchValue != null) {
+    searchButton.style.display = "none";
+    const filteredAPI = blogFetch.filter(
+      (blog) =>
+        blog.title.rendered.toLowerCase().includes(searchValue.toLowerCase()) ||
+        blog.content.rendered.toLowerCase().includes(searchValue.toLowerCase())
+    );
+    renderHTML(filteredAPI);
+  }
 }
 
-searchForm.addEventListener("submit", updateValue);
+searchForm.addEventListener("submit", updateHTML);
 
 async function createPage() {
   const fetchAPI = await getPosts();

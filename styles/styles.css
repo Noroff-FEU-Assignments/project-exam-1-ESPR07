@@ -481,6 +481,7 @@ textarea {
 .contentHeaderBox {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   background-color: var(--contentBackground);
   min-height: 70px;
   width: 100%;
@@ -488,6 +489,25 @@ textarea {
 
 .contentHeaderBox h1 {
   margin-left: 20px;
+}
+
+.searchBar {
+  display: flex;
+  margin-right: 20px;
+}
+
+.searchBar button {
+  background-image: url(/images/searchIcon.svg);
+  background-color: var(--containerBackground);
+  background-size: contain;
+  border: 2px solid black;
+  border-left: none;
+  cursor: pointer;
+  min-width: 30px;
+}
+
+.searchBar input {
+  background-color: var(--containerBackground);
 }
 
 .browseContentContainer {
